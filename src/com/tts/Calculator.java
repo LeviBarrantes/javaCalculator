@@ -6,8 +6,8 @@ public  class Calculator {
     private int solution;
     private static int num1;
     private static int num2;
-    private static final String pos = "+";
-    private static final String neg = "-";
+    private static final String sum = "+";
+    private static final String subt = "-";
     private static final String mult = "*";
     private static final String div = "/";
     static Scanner operators;
@@ -17,7 +17,7 @@ public  class Calculator {
     }
 
     private enum operation {
-        pos, neg, mult, div
+        sum, subt, mult, div
     }
     Calculator(int num1, int num2){
         this.num1 = num1;
@@ -107,16 +107,16 @@ public  class Calculator {
         System.out.println("operand 2: ");
         calc.setNum2(Integer.parseInt(operators.next()));
 
-        System.out.println("What operation? ('pos', 'neg', 'mult', 'div')");
+        System.out.println("What operation? ('sum', 'subt2', 'mult', 'div')");
         operation mathOperations = operation.valueOf(operators.next());
         int output = 0 ;
 
         switch(mathOperations){
-            case pos:
+            case sum:
                 output = calc.add(calc.getNum1(), calc.getNum2());
 
                 break;
-            case neg:
+            case subt:
                 output = calc.subtract(calc.getNum1(), calc.getNum2());
 
                 break;
